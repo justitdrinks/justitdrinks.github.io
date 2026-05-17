@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ShoppingBag, Heart, Menu, X, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -89,22 +89,28 @@ export default function Navbar({ cartCount, onOpenCart, onOpenWishlist, wishlist
       </motion.nav>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMenuOpen && (
-          <>
+          <motion.div
+            key="mobile-menu-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[90] md:hidden"
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-[90] md:hidden"
+              className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[100] shadow-2xl p-8 flex flex-col md:hidden"
+              className="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl p-8 flex flex-col"
             >
               <div className="flex justify-between items-center mb-16">
                 <span className="font-display text-xl font-bold text-gray-900">Navigation</span>
@@ -148,7 +154,7 @@ export default function Navbar({ cartCount, onOpenCart, onOpenWishlist, wishlist
                  </div>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

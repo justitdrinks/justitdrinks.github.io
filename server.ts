@@ -11,6 +11,8 @@ async function startServer() {
     res.json({ status: "ok" });
   });
 
+  console.log(`Starting server in ${process.env.NODE_ENV || 'development'} mode`);
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },

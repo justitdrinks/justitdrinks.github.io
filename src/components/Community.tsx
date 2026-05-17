@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { MessageCircle, Users, LayoutGrid, ArrowUpRight } from "lucide-react";
 
 const COMMUNITY_LINKS = {

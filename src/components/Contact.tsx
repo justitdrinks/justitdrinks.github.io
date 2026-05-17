@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { MessageCircle, Instagram, Twitter, Facebook, MapPin, Phone, Mail, CheckCircle2, LayoutGrid, Users } from "lucide-react";
 import { useState, FormEvent } from "react";
 

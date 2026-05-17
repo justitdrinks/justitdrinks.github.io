@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Heart, Plus, ShoppingBag, X, MessageCircle, ChevronRight, Share2, Star } from "lucide-react";
 
 const WHATSAPP_NUMBER = "+254735008421";
@@ -214,9 +214,15 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
       )}
 
       {/* Quick View Modal */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {selectedProduct && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <motion.div
+            key="modal-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          >
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -292,7 +298,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
                 </div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>

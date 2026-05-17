@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Leaf, Heart, Zap, ShieldCheck, Globe, Star } from "lucide-react";
 
 const features = [
