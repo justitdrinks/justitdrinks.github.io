@@ -7,7 +7,7 @@ import Community from "./components/Community";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { allProducts } from "./data/products";
-import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { ArrowUp, ShoppingBag, X, MessageCircle, ExternalLink, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -40,14 +40,17 @@ export default function App() {
     };
     window.addEventListener("scroll", handleScroll);
     
-    const savedWishlist = localStorage.getItem('wishlist');
-    if (savedWishlist) {
-      try {
-        setLikedIds(JSON.parse(savedWishlist));
-      } catch (e) {
-        console.error("Failed to parse wishlist", e);
-        localStorage.removeItem('wishlist');
+    try {
+      const savedWishlist = localStorage.getItem('wishlist');
+      if (savedWishlist) {
+        const parsed = JSON.parse(savedWishlist);
+        if (Array.isArray(parsed)) {
+          setLikedIds(parsed);
+        }
       }
+    } catch (e) {
+      console.error("Failed to parse wishlist", e);
+      localStorage.removeItem('wishlist');
     }
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -175,6 +178,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              key="cart-backdrop"
               onClick={() => setIsCartOpen(false)}
               className="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[80]"
             />
@@ -182,6 +186,7 @@ export default function App() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
+              key="cart-drawer"
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[90] shadow-2xl flex flex-col"
             >
@@ -254,6 +259,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              key="wishlist-backdrop"
               onClick={() => setIsWishlistOpen(false)}
               className="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[80]"
             />
@@ -261,6 +267,7 @@ export default function App() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
+              key="wishlist-drawer"
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[90] shadow-2xl flex flex-col"
             >
@@ -328,4 +335,3 @@ export default function App() {
     </div>
   );
 }
-
