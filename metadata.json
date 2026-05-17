@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Just It - Premium African Beverages",
+  "description": "Modern, non-alcoholic drinks inspired by African flavors and culture. Refresh naturally with Just It.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
