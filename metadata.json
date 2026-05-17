@@ -1,6 +1,6 @@
 {
-  "name": "Remix: Just It - Premium African Beverages",
-  "description": "Modern, non-alcoholic drinks inspired by African flavors and culture. Refresh naturally with Just It.",
+  "name": "Just It Beverages",
+  "description": "Premium African-inspired beverages including Jaba, Moratina, and Natural Juices. Modern, cultural, and refreshing.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

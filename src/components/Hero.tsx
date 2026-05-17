@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight, Star, Leaf } from "lucide-react";
 
 const WHATSAPP_NUMBER = "+254735008421";

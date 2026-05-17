@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { ExternalLink, Instagram, Facebook, Twitter } from "lucide-react";
 
 export default function Footer() {

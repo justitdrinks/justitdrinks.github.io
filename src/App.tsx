@@ -8,7 +8,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { allProducts } from "./data/products";
-import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { ArrowUp, ShoppingBag, X, MessageCircle, ExternalLink, Heart, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -141,7 +141,7 @@ export default function App() {
               </div>
               
               <div className="flex items-center gap-4">
-                <div className="flex gap-2 mr-4 md:flex hidden">
+                <div className="hidden md:flex gap-2 mr-4">
                   <button 
                     onClick={() => document.getElementById('gallery-scroll')?.scrollBy({ left: -400, behavior: 'smooth' })}
                     className="w-10 h-10 rounded-xl border border-gray-100 flex items-center justify-center text-gray-300 hover:border-brand-primary hover:text-brand-primary transition-all"
