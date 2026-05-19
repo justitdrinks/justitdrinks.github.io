@@ -21,8 +21,8 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Bold tropical refreshment with a tangy tamarind twist and smooth passion flavor.",
       fullDescription: "Experience the ultimate African fusion. Strong Passion Tamarind combines the sharp, earthy notes of traditional tamarind with the vibrant sweetness of Kenyan passion fruit. A bold, functional refreshment built for the social and the sharp.",
-      price: 350,
-      image: "/images/product/jaba/strong-passion-tamarind.jpg",
+      price: 00,
+      image: "/images/product/jaba/strong-passion-tamarind.png",
       tags: ["Bold", "Tropical", "Tangy"],
       badge: "Best Seller"
     },
@@ -33,8 +33,8 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Crisp sparkling ginger flavor crafted for smooth refreshing energy.",
       fullDescription: "A modern take on a classic sharp bite. Our Sparkling Gingerale is double-infused with fresh ginger root and premium botanicals, giving you a clean, bubbly lift without the sugar crash of synthetic energy drinks.",
-      price: 350,
-      image: "/images/product/jaba/sparkling-gingerale.jpg",
+      price: 00,
+      image: "/images/product/jaba/sparkling-gingerale.png",
       tags: ["Crisp", "Energizing", "Spicy"]
     },
     {
@@ -44,8 +44,8 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Fruity sparkling tropical blend inspired by vibrant beach vibes.",
       fullDescription: "Sunset in a bottle. This non-alcoholic sparkling blend captures the essence of coastal vibes with layers of peach, cranberry, and orange, all powered by our signature natural stimulants.",
-      price: 350,
-      image: "/images/product/jaba/sparkling-sob.jpg",
+      price: 00,
+      image: "/images/product/jaba/sparkling-sob.png",
       tags: ["Fruity", "Vibrant", "Coastal"],
       badge: "Popular"
     },
@@ -56,8 +56,8 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "A powerful bold refreshment experience for strong flavor lovers.",
       fullDescription: "Our flagship concentrate. Handas Extra Strong is for the dedicated, the creators, and the night-shifters. It delivers a deep, uncompromised botanical experience that keeps your focus sharp and your mood elevated.",
-      price: 300,
-      image: "/images/product/jaba/extra-strong.jpg",
+      price: 00,
+      image: "/images/product/jaba/extra-strong.png",
       tags: ["Powerful", "Bold", "Focus"]
     },
     {
