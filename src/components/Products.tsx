@@ -62,10 +62,15 @@ const ProductCard: React.FC<{
         </div>
         
         <div className="flex items-center justify-between">
-          <span className={`font-bold text-gray-900 text-sm ${product.isComingSoon ? 'opacity-50' : ''}`}>Ksh {product.price}</span>
+          <span className={`font-bold text-gray-900 text-sm ${product.isComingSoon ? 'opacity-50' : ''}`}>
+            {product.variants ? `From Ksh ${Math.min(...product.variants.map(v => v.price))}` : `Ksh ${product.price}`}
+          </span>
           <button 
             disabled={product.isComingSoon}
-            onClick={() => onAddToCart(product)}
+            onClick={() => product.variants 
+              ? onAddToCart({ ...product, price: product.variants[0].price, size: product.variants[0].size }) 
+              : onAddToCart(product)
+            }
             className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all transform active:scale-90 ${product.isComingSoon ? 'bg-gray-100 text-gray-300' : 'bg-brand-secondary text-brand-primary hover:bg-brand-primary hover:text-white'}`}
           >
             <Plus size={16} />
@@ -145,6 +150,7 @@ interface ProductsProps {
 
 export default function Products({ onAddToCart, likedIds, onToggleLike }: ProductsProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [activeBrand, setActiveBrand] = useState<string>("All Brands");
 
   const brands = ["All Brands", ...new Set(Object.values(productData).flat().map(p => p.brand))];
@@ -154,9 +160,34 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
     return products.filter(p => p.brand === activeBrand);
   };
 
+  const handleQuickView = (product: Product) => {
+    setSelectedProduct(product);
+    if (product.variants && product.variants.length > 0) {
+      setSelectedSize(product.variants[0].size);
+    } else {
+      setSelectedSize(null);
+    }
+  };
+
+  const currentPrice = selectedProduct?.variants && selectedSize
+    ? selectedProduct.variants.find(v => v.size === selectedSize)?.price || selectedProduct.price
+    : selectedProduct?.price || 0;
+
   const handleWhatsAppOrder = (product: Product) => {
-    const message = encodeURIComponent(`Hi Just It! I want to order ${product.name} (Ksh ${product.price}).`);
+    const sizeStr = selectedSize ? ` (${selectedSize})` : '';
+    const message = encodeURIComponent(`Hi Just It! I want to order ${product.name}${sizeStr} (Ksh ${currentPrice}).`);
     window.open(`https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}?text=${message}`, '_blank');
+  };
+
+  const handleAddToCart = () => {
+    if (!selectedProduct) return;
+    onAddToCart({
+      id: selectedProduct.id,
+      name: selectedProduct.name,
+      price: currentPrice,
+      size: selectedSize || undefined
+    });
+    setSelectedProduct(null);
   };
 
   return (
@@ -201,7 +232,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
           subtitle="Bold African Refreshment"
           products={filterProducts(productData.jaba)} 
           onAddToCart={onAddToCart}
-          onQuickView={setSelectedProduct}
+          onQuickView={handleQuickView}
           likedIds={likedIds}
           onToggleLike={onToggleLike}
         />
@@ -213,7 +244,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
           subtitle="Tradition Reimagined"
           products={filterProducts(productData.moratina)} 
           onAddToCart={onAddToCart}
-          onQuickView={setSelectedProduct}
+          onQuickView={handleQuickView}
           likedIds={likedIds}
           onToggleLike={onToggleLike}
         />
@@ -225,7 +256,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
           subtitle="Pure Goodness"
           products={filterProducts(productData.natural)} 
           onAddToCart={onAddToCart}
-          onQuickView={setSelectedProduct}
+          onQuickView={handleQuickView}
           likedIds={likedIds}
           onToggleLike={onToggleLike}
         />
@@ -291,6 +322,29 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
                   <h3 className="font-display text-4xl font-bold text-gray-900 mb-2 leading-tight tracking-tight">
                     {selectedProduct.name}
                   </h3>
+                  
+                  {/* Size Selector */}
+                  {selectedProduct.variants && (
+                    <div className="mb-4">
+                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Select Size</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProduct.variants.map((v) => (
+                          <button
+                            key={v.size}
+                            onClick={() => setSelectedSize(v.size)}
+                            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                              selectedSize === v.size
+                                ? "bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20"
+                                : "bg-white text-gray-500 border-gray-100 hover:border-brand-primary hover:text-brand-primary"
+                            }`}
+                          >
+                            {v.size}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {selectedProduct.tags.map(tag => (
                       <span key={tag} className="text-[10px] font-bold text-brand-primary bg-brand-primary/5 px-2 py-0.5 rounded-md">
@@ -305,7 +359,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
 
                 <div className="flex items-center gap-6 py-6 border-y border-gray-50 mb-8">
                   <div className="font-display font-black text-gray-900 text-4xl tracking-tighter">
-                    Ksh {selectedProduct.price}
+                    Ksh {currentPrice}
                   </div>
                   <button 
                     onClick={() => onToggleLike(selectedProduct.id)}
@@ -317,7 +371,7 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
 
                 <div className="grid grid-cols-1 gap-3">
                   <button 
-                    onClick={() => { onAddToCart(selectedProduct); setSelectedProduct(null); }}
+                    onClick={handleAddToCart}
                     className="flex items-center justify-center gap-2 bg-brand-primary text-white py-3.5 rounded-xl font-bold hover:btn-gradient transition-all active:scale-95 text-sm"
                   >
                     <ShoppingBag size={18} />

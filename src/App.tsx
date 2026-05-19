@@ -18,6 +18,7 @@ export interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  size?: string;
 }
 
 const WHATSAPP_NUMBER = "254735008421";
@@ -58,19 +59,19 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const addToCart = (product: { id: number; name: string; price: number }) => {
+  const addToCart = (product: { id: number; name: string; price: number; size?: string }) => {
     setCart(prev => {
-      const existing = prev.find(item => item.id === product.id);
+      const existing = prev.find(item => item.id === product.id && item.size === product.size);
       if (existing) {
-        return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
+        return prev.map(item => item.id === product.id && item.size === product.size ? { ...item, quantity: item.quantity + 1 } : item);
       }
       return [...prev, { ...product, quantity: 1 }];
     });
     setIsCartOpen(true);
   };
 
-  const removeFromCart = (id: number) => {
-    setCart(prev => prev.filter(item => item.id !== id));
+  const removeFromCart = (id: number, size?: string) => {
+    setCart(prev => prev.filter(item => !(item.id === id && item.size === size)));
   };
 
   const toggleLike = (id: number) => {
@@ -87,7 +88,7 @@ export default function App() {
     const message = `🍹 *NEW ORDER — JUST IT*%0A%0A` + 
       `Customer: Guest User%0A` +
       `━━━━━━━━━━━━━━━%0A%0A` + 
-      cart.map(item => `🧃 *${item.name}*%0AQty: ${item.quantity}%0APrice: Ksh ${item.price * item.quantity}`).join('%0A%0A') + 
+      cart.map(item => `🧃 *${item.name}*${item.size ? ` (${item.size})` : ''}%0AQty: ${item.quantity}%0APrice: Ksh ${item.price * item.quantity}`).join('%0A%0A') + 
       `%0A%0A━━━━━━━━━━━━━━━%0A%0A` +
       `*TOTAL: Ksh ${cartTotal}*%0A%0A` +
       `Delivery/Pickup:%0APending confirmation%0A%0A` +
@@ -177,12 +178,15 @@ export default function App() {
                   </div>
                 ) : (
                   cart.map(item => (
-                    <div key={item.id} className="flex gap-4 group">
+                    <div key={`${item.id}-${item.size || 'default'}`} className="flex gap-4 group">
                       <div className="w-20 h-20 bg-gray-100 rounded-2xl overflow-hidden shrink-0 text-brand-primary flex items-center justify-center font-bold">JI</div>
                       <div className="flex-1">
                         <div className="flex justify-between items-start">
-                          <h4 className="font-bold text-gray-900 group-hover:text-brand-primary transition-colors">{item.name}</h4>
-                          <button onClick={() => removeFromCart(item.id)} className="text-gray-300 hover:text-red-500 transition-colors">
+                          <div>
+                            <h4 className="font-bold text-gray-900 group-hover:text-brand-primary transition-colors">{item.name}</h4>
+                            {item.size && <p className="text-[10px] font-bold text-brand-primary bg-brand-primary/10 px-2 py-0.5 rounded inline-block mt-1">{item.size}</p>}
+                          </div>
+                          <button onClick={() => removeFromCart(item.id, item.size)} className="text-gray-300 hover:text-red-500 transition-colors">
                             <X size={16} />
                           </button>
                         </div>
@@ -276,7 +280,14 @@ export default function App() {
                           <p className="text-sm font-black text-gray-900 mt-2">Ksh {product.price}</p>
                           {!product.isComingSoon ? (
                             <button 
-                              onClick={() => { addToCart({ id: product.id, name: product.name, price: product.price }); setIsWishlistOpen(false); setIsCartOpen(true); }}
+                              onClick={() => { 
+                                const productToAdd = product.variants 
+                                  ? { id: product.id, name: product.name, price: product.variants[0].price, size: product.variants[0].size }
+                                  : { id: product.id, name: product.name, price: product.price };
+                                addToCart(productToAdd); 
+                                setIsWishlistOpen(false); 
+                                setIsCartOpen(true); 
+                              }}
                               className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2 hover:underline"
                             >
                               Add to Bag
