@@ -160,7 +160,7 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "A solid traditional foundation with a modern lift.",
       fullDescription: "The Doormans Original is built on reliability. A consistent, high-quality botanical refreshment designed for daily focus and energy.",
-      price: 500,
+      price: 1000,
       image: "/images/product/jaba/doormans-original.png",
       tags: ["Reliable", "Classic", "Strong"]
     },
@@ -171,7 +171,7 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Engineered for maximum endurance and focus.",
       fullDescription: "When the sun goes down, Doormans Night Shift keeps you going. Extra concentrated botanicals for those who work while the world sleeps.",
-      price: 750,
+      price: 1000,
       image: "/images/product/jaba/doormans-night-shift.png",
       tags: ["Endurance", "Focus", "Intense"],
       badge: "Extra Strength"
