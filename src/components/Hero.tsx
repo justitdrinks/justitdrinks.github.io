@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, Star, Leaf } from "lucide-react";
+import { MessageCircle, ArrowRight, Star, Leaf, ShoppingBag } from "lucide-react";
 
 const WHATSAPP_NUMBER = "+254735008421";
 
@@ -65,8 +65,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="bg-brand-primary text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-brand-primary/20 hover:shadow-brand-primary/30 transition-all active:scale-95"
             >
-              <MessageCircle size={20} />
-              Order on WhatsApp
+              Order via WhatsApp
+              <ShoppingBag size={18} />
             </a>
             <button
               onClick={handleExplore}
@@ -102,8 +102,9 @@ export default function Hero() {
           <div className="relative z-10 p-4 bg-white rounded-[50px] shadow-2xl shadow-brand-primary/10 border border-gray-50">
             <div className="rounded-[40px] overflow-hidden aspect-[4/5] relative">
               <img 
-                src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?q=80&w=1000&auto=format&fit=crop" 
-                alt="Hibiscus Refreshment" 
+                src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200" 
+                alt="Just It Brand Mockup" 
+                loading="eager"
                 className="w-full h-full object-cover transition-transform duration-2000 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-60" />

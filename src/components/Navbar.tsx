@@ -42,7 +42,7 @@ export default function Navbar({ cartCount, onOpenCart, onOpenWishlist, wishlist
             <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
               <div className="w-4 h-4 border-2 border-white rounded-full" />
             </div>
-            <span className="tracking-tighter">JUST IT.</span>
+            <span className="tracking-tighter uppercase">JUST IT.</span>
           </a>
           
           <div className="hidden md:flex items-center gap-8 text-[11px] font-black text-gray-900 uppercase tracking-[0.2em]">

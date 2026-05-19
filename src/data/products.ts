@@ -8,110 +8,116 @@ export interface Product {
   price: number;
   image: string;
   tags: string[];
+  isComingSoon?: boolean;
+  badge?: string;
 }
 
 export const productData: { [key: string]: Product[] } = {
   jaba: [
     {
       id: 1,
-      name: "Handas distilled Apple",
+      name: "Strong Passion Tamarind",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Authentic, energizing experience that keeps you sharp for hours.",
-      fullDescription: "The pure essence of khat. Crafted with premium leaves for an authentic, energizing experience that keeps you sharp for hours. A traditional favorite reinvented for the modern palate.",
-      price: 250,
-      image: "https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=600",
-      tags: ["Classic", "Energy"]
+      description: "Bold tropical refreshment with a tangy tamarind twist and smooth passion flavor.",
+      fullDescription: "Experience the ultimate African fusion. Strong Passion Tamarind combines the sharp, earthy notes of traditional tamarind with the vibrant sweetness of Kenyan passion fruit. A bold, functional refreshment built for the social and the sharp.",
+      price: 350,
+      image: "/images/product/jaba/strong-passion-tamarind.jpg",
+      tags: ["Bold", "Tropical", "Tangy"],
+      badge: "Best Seller"
     },
     {
       id: 2,
-      name: "Handas distilled Pineapple",
+      name: "Sparkling Gingerale",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Infused with Mediterranean pineapple zest for a refreshing kick.",
-      fullDescription: "Our signature jaba juice infused with Mediterranean lemon zest. The perfect balance of bitter and sour for a refreshing kick that awakens the senses.",
-      price: 280,
-      image: "https://images.unsplash.com/photo-1523363342553-61fc072a2455?q=80&w=600",
-      tags: ["Refreshing", "Zesty"]
+      description: "Crisp sparkling ginger flavor crafted for smooth refreshing energy.",
+      fullDescription: "A modern take on a classic sharp bite. Our Sparkling Gingerale is double-infused with fresh ginger root and premium botanicals, giving you a clean, bubbly lift without the sugar crash of synthetic energy drinks.",
+      price: 350,
+      image: "/images/product/jaba/sparkling-gingerale.jpg",
+      tags: ["Crisp", "Energizing", "Spicy"]
     },
     {
       id: 3,
-      name: "Handas distilled strawberry",
+      name: "Sparkling Sex on the Beach",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "A wild blend of forest berries with natural energy.",
-      fullDescription: "A wild blend of forest berries mixed with the natural energy of jaba. Sweet, tart, and incredibly invigorating for any time of day.",
-      price: 300,
-      image: "https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?q=80&w=600",
-      tags: ["Sweet", "Fruity"]
+      description: "Fruity sparkling tropical blend inspired by vibrant beach vibes.",
+      fullDescription: "Sunset in a bottle. This non-alcoholic sparkling blend captures the essence of coastal vibes with layers of peach, cranberry, and orange, all powered by our signature natural stimulants.",
+      price: 350,
+      image: "/images/product/jaba/sparkling-sob.jpg",
+      tags: ["Fruity", "Vibrant", "Coastal"],
+      badge: "Popular"
     },
     {
       id: 4,
       name: "Handas Extra Strong",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Ultimate health-meets-energy tonic with double strength ginger.",
-      fullDescription: "The ultimate health-meets-energy tonic. Double-strength ginger juice extracts combined with our premium jaba base for a spicy, healthy lift.",
-      price: 280,
-      image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600",
-      tags: ["Immunity", "Spicy"]
+      description: "A powerful bold refreshment experience for strong flavor lovers.",
+      fullDescription: "Our flagship concentrate. Handas Extra Strong is for the dedicated, the creators, and the night-shifters. It delivers a deep, uncompromised botanical experience that keeps your focus sharp and your mood elevated.",
+      price: 300,
+      image: "/images/product/jaba/extra-strong.jpg",
+      tags: ["Powerful", "Bold", "Focus"]
     },
     {
       id: 5,
-      name: "Sparkling Sex on the beach",
+      name: "Handas Distilled Strawberry",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Tropical pineapple infusion for a sweet, energetic vibe.",
-      fullDescription: "Tropical pineapple juices blended with our premium jaba. A sweet, sunny escape that keeps your energy levels at their peak.",
-      price: 270,
-      image: "https://images.unsplash.com/photo-1550506389-d10667ea894a?q=80&w=600",
-      tags: ["Tropical", "Sweet"]
+      description: "Smooth strawberry refreshment with naturally vibrant fruity sweetness.",
+      fullDescription: "Pure fruity indulgence. We've distilled the essence of sun-ripened strawberries into a smooth, refreshing base. Perfectly balanced for a sweet, energetic pick-me-up any time of day.",
+      price: 280,
+      image: "/images/product/jaba/distilled-strawberry.jpg",
+      tags: ["Smooth", "Sweet", "Fruity"]
     },
     {
       id: 6,
-      name: "Sparkling Gingerale",
+      name: "Handas Distilled Pineapple",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Cooling peppermint levels for a crisp, wake-up call.",
-      fullDescription: "Double-distilled peppermint mixed with our refined jaba base. Cooling, crisp, and perfect for long working hours or late study sessions.",
-      price: 260,
-      image: "https://images.unsplash.com/photo-1588107908922-8179269e8841?q=80&w=600",
-      tags: ["Cooling", "Fresh"]
+      description: "Bright tropical pineapple flavor bursting with island-inspired freshness.",
+      fullDescription: "Tropical sunshine, distilled. A bright, golden refreshment that brings the island fresh feel to the city streets. Crisp, sweet, and incredibly refreshing.",
+      price: 280,
+      image: "/images/product/jaba/distilled-pineapple.jpg",
+      tags: ["Bright", "Tropical", "Fresh"]
     },
     {
-      id: 12,
-      name: "Strong Passion Tamarind",
+      id: 7,
+      name: "Handas Distilled Apple",
       brand: "Handas",
       category: "Jaba Collection",
-      description: "Succulent watermelon sweetness paired with natural focus.",
-      fullDescription: "Real watermelon juice concentrated and paired with our signature jaba. Light, hydrating, and perfectly energizing.",
-      price: 290,
-      image: "https://images.unsplash.com/photo-1589733901241-5e5d070b427b?q=80&w=600",
-      tags: ["Hydrating", "Sweet"]
+      description: "Crisp apple-inspired refreshment with a clean smooth finish.",
+      fullDescription: "Simplicity refined. Our distilled apple juice provides a clean, familiar, and crisp refreshment that serves as the perfect daily companion for natural focus.",
+      price: 280,
+      image: "/images/product/jaba/distilled-apple.jpg",
+      tags: ["Crisp", "Clean", "Classic"]
     },
     {
-      id: 13,
-      name: "Spice Route Jaba",
-      brand: "Just It",
+      id: 8,
+      name: "Handas Mixed Flavor Pack",
+      brand: "Handas",
       category: "Jaba Collection",
-      description: "A blend of cloves and cinnamon for a warm, grounded energy.",
-      fullDescription: "Inspired by the Swahili coast, this blend features cloves, cinnamon, and a hint of cardamom mixed with jaba for a deeply aromatic experience.",
-      price: 320,
-      image: "https://images.unsplash.com/photo-1587595509536-53d368d18d40?q=80&w=600",
-      tags: ["Aromatic", "Warm"]
+      description: "A refreshing combo experience featuring multiple Handas signature flavors.",
+      fullDescription: "Can't decide? The mixed pack is your ultimate gateway to the Handas universe. Featuring a curated selection of our best-selling botanical blends, variety is the spice of life.",
+      price: 1500,
+      image: "/images/product/jaba/mixed-pack.jpg",
+      tags: ["Variety", "Combo", "Sharing"],
+      badge: "Combo Pack"
     }
   ],
   moratina: [
     {
-      id: 7,
+      id: 9,
       name: "Classic Moratina",
       brand: "Just It",
       category: "Moratina Collection",
       description: "Refined non-alcoholic version of the tradition.",
-      fullDescription: "A refined, non-alcoholic version of the traditional Kenyan classic. Deep, rich, and sophisticated with notes of roasted honey and heritage.",
-      price: 450,
-      image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=600",
-      tags: ["Heritage", "Premium"]
+      fullDescription: "Heritage in every sip. Our Classic Moratina captures the deep, woody notes of the sausage tree fruit, balanced with roasted honey. A sophisticated serve for moments of reflection.",
+      price: 600,
+      image: "/images/product/moratina/classic.jpg",
+      tags: ["Heritage", "Sophisticated"],
+      isComingSoon: true
     },
     {
       id: 10,
@@ -119,111 +125,122 @@ export const productData: { [key: string]: Product[] } = {
       brand: "Just It",
       category: "Moratina Collection",
       description: "Liquid gold sweetness with a heritage base.",
-      fullDescription: "Premium Moratina base infused with sustainably sourced honey. A smoother, sweeter take on the classic experience.",
-      price: 500,
-      image: "https://images.unsplash.com/photo-1514361892635-6b07eba1aa53?q=80&w=600",
-      tags: ["Sweet", "Smooth"]
+      fullDescription: "A smoother, sweeter take on the classic. Infused with premium multi-floral honey, this blend is warm, welcoming, and deeply satisfying.",
+      price: 650,
+      image: "/images/product/moratina/honey-gold.jpg",
+      tags: ["Sweet", "Premium"],
+      isComingSoon: true
     },
     {
-      id: 14,
+      id: 11,
       name: "Amber Reserve Moratina",
       brand: "Just It",
       category: "Moratina Collection",
       description: "Small-batch reserve for the ultimate connoisseur.",
-      fullDescription: "A double-filtered reserve batch featuring the deepest woody notes of the sausage tree fruit. For those who appreciate the true craftsmanship of tradition.",
-      price: 650,
-      image: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?q=80&w=600",
-      tags: ["Special", "Reserve"]
+      fullDescription: "The peak of our craftsmanship. Double-steeped and carefully filtered, the Amber Reserve offers the most complex flavor profile in our Moratina line.",
+      price: 850,
+      image: "/images/product/moratina/amber-reserve.jpg",
+      tags: ["Complex", "Reserve"],
+      isComingSoon: true
     },
     {
-      id: 15,
+      id: 12,
       name: "Vanilla Oak Moratina",
       brand: "Just It",
       category: "Moratina Collection",
       description: "Subtle vanilla notes aged with natural oak extracts.",
-      fullDescription: "A modern twist where traditional moratina meets natural vanilla extracts. Creamy, familiar yet excitingly different.",
-      price: 550,
-      image: "https://images.unsplash.com/photo-1544026760-49896ce1231f?q=80&w=600",
-      tags: ["Modern", "Creamy"]
+      fullDescription: "A modern fusion. Traditional Moratina meets the creamy, comforting notes of natural Madagascan vanilla. Unexpectedly smooth and elegant.",
+      price: 700,
+      image: "/images/product/moratina/vanilla-oak.jpg",
+      tags: ["Creamy", "Modern"],
+      isComingSoon: true
     },
     {
-      id: 16,
-      name: "Cinnamon Sky Moratina",
+      id: 13,
+      name: "Cinnamon Spice Moratina",
       brand: "Just It",
       category: "Moratina Collection",
       description: "Warm cinnamon spice blended perfectly with tradition.",
-      fullDescription: "Infused with Ceylon cinnamon, this blend offers a warm, spicy finish that perfectly complements the earthy notes of the traditional moratina.",
-      price: 520,
-      image: "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?q=80&w=600",
-      tags: ["Spicy", "Warm"]
+      fullDescription: "Infused with Ceylon cinnamon, this blend offers a warm, spicy finish that perfectly complements the earthy notes of the traditional Moratina.",
+      price: 680,
+      image: "/images/product/moratina/cinnamon-spice.jpg",
+      tags: ["Warm", "Spicy"],
+      isComingSoon: true
     },
     {
-      id: 17,
-      name: "Ginger Root Moratina",
+      id: 14,
+      name: "Spiced Heritage Blend",
       brand: "Just It",
       category: "Moratina Collection",
-      description: "Sharp ginger bite for a revitalizing traditional serve.",
-      fullDescription: "Freshly pressed ginger root mixed with our heritage base. A sharp, invigorating experience that clears the mind.",
-      price: 480,
-      image: "https://images.unsplash.com/photo-1559181567-c3190ca9959b?q=80&w=600",
-      tags: ["Sharp", "Revitalizing"]
+      description: "A secret blend of traditional spices and botanical extracts.",
+      fullDescription: "Our family recipe. A closely guarded blend of seven traditional spices that brings a unique, grounded energy to your gathering.",
+      price: 720,
+      image: "/images/product/moratina/spiced-heritage.jpg",
+      tags: ["Traditional", "Grounded"],
+      isComingSoon: true
     },
     {
-      id: 18,
-      name: "Royal Black Moratina",
+      id: 15,
+      name: "Midnight Reserve",
       brand: "Just It",
       category: "Moratina Collection",
       description: "Deepest roast, boldest flavor for a regal experience.",
-      fullDescription: "Featuring scorched honey and extra long-steeped ingredients, this is our most intense flavor profile yet. Bold and unforgettable.",
-      price: 700,
-      image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=600",
-      tags: ["Bold", "Intense"]
+      fullDescription: "Extra long-steeped ingredients for an intense, unforgettable profile. For those who enjoy the deepest, most cultural notes of African tradition.",
+      price: 900,
+      image: "/images/product/moratina/midnight-reserve.jpg",
+      tags: ["Intense", "Regal"],
+      isComingSoon: true
     },
     {
-      id: 19,
-      name: "Sunset Orange Moratina",
+      id: 16,
+      name: "Moratina Signature Pack",
       brand: "Just It",
       category: "Moratina Collection",
-      description: "Bright citrus notes bring a sunny glow to tradition.",
-      fullDescription: "Dried orange peel and fresh nectar mixed with Moratina. Bright, acidic, and wonderfully balanced for an evening toast.",
-      price: 530,
-      image: "https://images.unsplash.com/photo-1444927714506-8492d94b4e3d?q=80&w=600",
-      tags: ["Citrus", "Balanced"]
+      description: "The complete heritage experience across all flavors.",
+      fullDescription: "The ultimate cultural gift. This signature collection features four of our most popular Moratina blends in a premium presentation pack.",
+      price: 2500,
+      image: "/images/product/moratina/signature-pack.jpg",
+      tags: ["Gift", "Collection"],
+      isComingSoon: true
     }
   ],
   natural: [
     {
-      id: 8,
+      id: 17,
       name: "Hibiscus High",
       brand: "Freshly",
       category: "Natural Juice",
       description: "Cold-brewed hibiscus with a hint of lime and mint.",
-      fullDescription: "Cold-brewed hibiscus with a hint of lime and mint. A floral explosion that stays with you, packed with antioxidants and natural freshness.",
+      fullDescription: "Packed with antioxidants and naturally refreshing. Our Hibiscus High is cold-pressed to preserve the floral richness and vibrant color of Kenyan hibiscus flowers.",
       price: 200,
-      image: "https://images.unsplash.com/photo-1556761175-5973cf0f32e7?q=80&w=600",
-      tags: ["Floral", "Antioxidant"]
+      image: "/images/product/natural/hibiscus-high.jpg",
+      tags: ["Healthy", "Clean", "Fresh"],
+      badge: "Natural",
+      isComingSoon: true
     },
     {
-      id: 9,
+      id: 18,
       name: "Baobab Bliss",
       brand: "Wild",
       category: "Natural Juice",
       description: "Superfood in a bottle. Tangy baobab and honey.",
-      fullDescription: "Superfood in a bottle. Tangy baobab fruit blended with wild honey and vanilla for a creamy, nutritious delight that fuels your body.",
-      price: 350,
-      image: "https://images.unsplash.com/photo-1523362628242-4dc5820061fa?q=80&w=600",
-      tags: ["Superfood", "Creamy"]
+      fullDescription: "Ancient wisdom in a modern bottle. The baobab fruit is a nutritional powerhouse, blended here with wild honey for a creamy, tangy delight.",
+      price: 250,
+      image: "/images/product/natural/baobab-bliss.jpg",
+      tags: ["Superfood", "Energy", "Clean"],
+      isComingSoon: true
     },
     {
-      id: 11,
+      id: 19,
       name: "Passion Punch",
       brand: "Coastal",
       category: "Natural Juice",
       description: "Intense passion fruit with a tropical twist.",
-      fullDescription: "A vibrant blend of coastal passion fruits. Sharp, sweet, and perfectly chilled for Kenya's sunny afternoons.",
+      fullDescription: "Coastal intensity. We source the most aromatic passion fruits from the Kenyan coast to deliver a sharp, sweet peak of tropical energy.",
       price: 180,
-      image: "https://images.unsplash.com/photo-1589733902251-6f6368d18440?q=80&w=600",
-      tags: ["Tropical", "Vibrant"]
+      image: "/images/product/natural/passion-punch.jpg",
+      tags: ["Vibrant", "Tropical", "Fresh"],
+      isComingSoon: true
     },
     {
       id: 20,
@@ -231,10 +248,11 @@ export const productData: { [key: string]: Product[] } = {
       brand: "Coastal",
       category: "Natural Juice",
       description: "Rich coastal mango nectar, smooth and velvety.",
-      fullDescription: "Pure nectar from the finest Ngowe mangos. Thick, velvety, and naturally sweet without any added sugars.",
+      fullDescription: "Pure nectar from sun-drenched Ngowe mangos. Thick, velvety, and naturally sweet without a single gram of added sugar.",
       price: 220,
-      image: "https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=600",
-      tags: ["Smooth", "Sweet"]
+      image: "/images/product/natural/mango-moon.jpg",
+      tags: ["Velvety", "Clean", "Healthy"],
+      isComingSoon: true
     },
     {
       id: 21,
@@ -242,45 +260,50 @@ export const productData: { [key: string]: Product[] } = {
       brand: "Garden",
       category: "Natural Juice",
       description: "Detox blend of kale, apple, and cucumber.",
-      fullDescription: "A refreshing detox blend. Cold-pressed kale, Granny Smith apples, and cucumber with a dash of lemon for your daily health reboot.",
-      price: 400,
-      image: "https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?q=80&w=600",
-      tags: ["Health", "Green"]
+      fullDescription: "Your daily reboot. Cold-pressed kale, Granny Smith apples, and cucumber with a dash of lemon. Bright, bright energy for a clean start.",
+      price: 300,
+      image: "/images/product/natural/green-goddess.jpg",
+      tags: ["Detox", "Clean", "Natural"],
+      isComingSoon: true
     },
     {
       id: 22,
-      name: "Ruby Beet",
+      name: "Citrus Glow",
       brand: "Garden",
       category: "Natural Juice",
-      description: "Earthy beetroot with sweet carrot and ginger.",
-      fullDescription: "Beautifully earthy and sweet. Beetroot and carrot juice with a ginger finish to boost your stamina and energy naturally.",
-      price: 380,
-      image: "https://images.unsplash.com/photo-1615485290382-441e4d0c9cb5?q=80&w=600",
-      tags: ["Earthly", "Energy"]
+      description: "Bright citrus notes bring a sunny glow to tradition.",
+      fullDescription: "A Vitamin-C explosion. Orange, tangerine, and a hint of grapefruit zest for a morning boost that radiates from the inside out.",
+      price: 240,
+      image: "/images/product/natural/citrus-glow.jpg",
+      tags: ["Glowing", "Bright", "Healthy"],
+      isComingSoon: true
     },
     {
       id: 23,
-      name: "Tamarind Tease",
+      name: "Tropical Sunrise",
       brand: "Coastal",
       category: "Natural Juice",
-      description: "Tangy tamarind pods slow-boiled with spices.",
-      fullDescription: "A classic coastal cooler. Tangy tamarind infused with a hint of roasted cumin and honey for a truly unique refreshment.",
-      price: 250,
-      image: "https://images.unsplash.com/photo-1588107908922-8179269e8841?q=80&w=600",
-      tags: ["Tangy", "Unique"]
+      description: "A vibrant blend of pineapple, passion, and orange.",
+      fullDescription: "Every morning should feel this good. Tropical Sunrise is a balanced three-fruit blend that brings the warmth of the Kenyan coast to your table.",
+      price: 260,
+      image: "/images/product/natural/tropical-sunrise.jpg",
+      tags: ["Vibrant", "Balanced", "Fresh"],
+      isComingSoon: true
     },
     {
       id: 24,
-      name: "Guava Glow",
-      brand: "Freshly",
+      name: "Berry Bloom",
+      brand: "Garden",
       category: "Natural Juice",
-      description: "Pink guava nectar with a fragrant tropical aroma.",
-      fullDescription: "Fragrant and smooth pink guava nectar. Packed with Vitamin C and a flavor that transports you straight to the islands.",
+      description: "Fruity blend of mixed forest berries with natural energy.",
+      fullDescription: "A wild harvest. We've combined strawberries, raspberries, and local wild berries into a clean, energetic juice that's as beautiful as it is delicious.",
       price: 280,
-      image: "https://images.unsplash.com/photo-1596701062351-8c0c1692267b?q=80&w=600",
-      tags: ["Aromatic", "Vitamins"]
+      image: "/images/product/natural/berry-bloom.jpg",
+      tags: ["Antioxidant", "Natural", "Sweet"],
+      isComingSoon: true
     }
   ]
 };
+
 
 export const allProducts = Object.values(productData).flat();

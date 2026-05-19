@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Products from "./components/Products";
+import Gallery from "./components/Gallery";
 import Features from "./components/Features";
 import Community from "./components/Community";
 import Testimonials from "./components/Testimonials";
@@ -123,89 +124,9 @@ export default function App() {
           onToggleLike={toggleLike}
         />
         <Features />
-        
+        <Gallery />
         <Community />
         <Testimonials />
-        
-        {/* The Vibe Section - Swipable Gallery */}
-        <section className="py-24 bg-white overflow-hidden relative">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-              <div>
-                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-[2px] bg-brand-primary" />
-                  <span className="text-brand-primary font-black uppercase tracking-[0.2em] text-[10px]">Gallery</span>
-                </motion.div>
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight">The Just It <span className="text-brand-primary italic">Vibe.</span></h2>
-                <p className="text-gray-500 text-sm italic">Explore our community moments</p>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="hidden md:flex gap-2 mr-4">
-                  <button 
-                    onClick={() => document.getElementById('gallery-scroll')?.scrollBy({ left: -400, behavior: 'smooth' })}
-                    className="w-10 h-10 rounded-xl border border-gray-100 flex items-center justify-center text-gray-300 hover:border-brand-primary hover:text-brand-primary transition-all"
-                  >
-                    <ChevronRight className="rotate-180" size={18} />
-                  </button>
-                  <button 
-                    onClick={() => document.getElementById('gallery-scroll')?.scrollBy({ left: 400, behavior: 'smooth' })}
-                    className="w-10 h-10 rounded-xl border border-gray-100 flex items-center justify-center text-gray-300 hover:border-brand-primary hover:text-brand-primary transition-all"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
-                </div>
-                <a href="https://instagram.com/justit_kenya" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold text-gray-900 group">
-                  Follow @justit_kenya 
-                  <div className="w-8 h-8 rounded-full bg-brand-secondary flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
-                    <ExternalLink size={14} />
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div 
-              id="gallery-scroll"
-              className="flex gap-4 overflow-x-auto pb-12 hide-scrollbar snap-x scroll-px-6"
-            >
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="flex-shrink-0 w-[280px] md:w-[350px] h-[400px] md:h-[500px] rounded-[32px] overflow-hidden bg-gray-50 border border-gray-100 snap-center"
-              >
-                <img src="https://images.unsplash.com/photo-1523363342553-61fc072a2455?q=80&w=600" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Vibe" />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="flex-shrink-0 w-[280px] md:w-[500px] h-[400px] md:h-[500px] rounded-[40px] overflow-hidden relative group bg-gray-50 border border-gray-100 snap-center"
-              >
-                <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?q=80&w=800" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Vibe" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500">
-                  <p className="text-white font-display font-bold text-2xl italic">Pure African Goodness.</p>
-                </div>
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="flex-shrink-0 w-[280px] md:w-[350px] h-[400px] md:h-[500px] rounded-[32px] overflow-hidden bg-gray-50 border border-gray-100 snap-center"
-              >
-                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=600" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Vibe" />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="flex-shrink-0 w-[280px] md:w-[350px] h-[400px] md:h-[500px] rounded-[32px] overflow-hidden bg-gray-50 border border-gray-100 snap-center"
-              >
-                <img src="https://images.unsplash.com/photo-1514361892635-6b07eba1aa53?q=80&w=600" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Vibe" />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="flex-shrink-0 w-[280px] md:w-[350px] h-[400px] md:h-[500px] rounded-[32px] overflow-hidden bg-gray-50 border border-gray-100 snap-center"
-              >
-                <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Vibe" />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         <Contact />
       </main>
 
@@ -353,12 +274,18 @@ export default function App() {
                           </div>
                           <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest">{product.brand}</p>
                           <p className="text-sm font-black text-gray-900 mt-2">Ksh {product.price}</p>
-                          <button 
-                            onClick={() => { addToCart({ id: product.id, name: product.name, price: product.price }); setIsWishlistOpen(false); setIsCartOpen(true); }}
-                            className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2 hover:underline"
-                          >
-                            Add to Bag
-                          </button>
+                          {!product.isComingSoon ? (
+                            <button 
+                              onClick={() => { addToCart({ id: product.id, name: product.name, price: product.price }); setIsWishlistOpen(false); setIsCartOpen(true); }}
+                              className="text-brand-primary text-[10px] font-black uppercase tracking-widest mt-2 hover:underline"
+                            >
+                              Add to Bag
+                            </button>
+                          ) : (
+                            <span className="text-gray-300 text-[10px] font-black uppercase tracking-widest mt-2 block">
+                              Coming Soon
+                            </span>
+                          )}
                         </div>
                       </div>
                     ))}
