@@ -76,9 +76,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/extra-strong.png",
       tags: ["Powerful", "Bold", "Focus"],
       variants: [
-        { size: "1litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
@@ -92,9 +92,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/distilled-strawberry.png",
       tags: ["Smooth", "Sweet", "Fruity"],
       variants: [
-        { size: "1 litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1 litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
@@ -108,9 +108,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/distilled-pineapple.png",
       tags: ["Bright", "Tropical", "Fresh"],
       variants: [
-        { size: "1 litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1 litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
@@ -124,9 +124,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/distilled-apple.png",
       tags: ["Crisp", "Clean", "Classic"],
       variants: [
-        { size: "1 litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1 litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
