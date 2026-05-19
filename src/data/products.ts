@@ -42,8 +42,7 @@ export const productData: { [key: string]: Product[] } = {
       tags: ["Bold", "Tropical", "Tangy"],
       badge: "Best Seller",
       variants: [
-        { size: "1000ml", price: 1000 },
-        { size: "500ml", price: 500 }
+        { size: "1000ml", price: 1000 }
       ]
     },
     {
@@ -57,8 +56,7 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/sparkling-gingerale.png",
       tags: ["Crisp", "Energizing", "Spicy"],
       variants: [
-        { size: "1000ml", price: 1000 },
-        { size: "500ml", price: 500 }
+        { size: "1000ml", price: 1000 }
       ]
     },
     {
@@ -73,8 +71,7 @@ export const productData: { [key: string]: Product[] } = {
       tags: ["Fruity", "Vibrant", "Coastal"],
       badge: "Popular",
       variants: [
-        { size: "1000ml", price: 1000 },
-        { size: "500ml", price: 500 }
+        { size: "1000ml", price: 1000 }
       ]
     },
     {
@@ -88,9 +85,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/extra-strong.png",
       tags: ["Powerful", "Bold", "Focus"],
       variants: [
-        { size: "1litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
@@ -105,8 +102,8 @@ export const productData: { [key: string]: Product[] } = {
       tags: ["Smooth", "Sweet", "Fruity"],
       variants: [
         { size: "1 litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
@@ -120,9 +117,9 @@ export const productData: { [key: string]: Product[] } = {
       image: "/images/product/jaba/distilled-apple.png",
       tags: ["Crisp", "Clean", "Classic"],
       variants: [
-        { size: "1 litre", price: 1000 },
-        { size: "500ml", price: 450 },
-        { size: "250ml", price: 250 }
+        { size: "1 litre", price: 1200 },
+        { size: "500ml", price: 600 },
+        { size: "250ml", price: 300 }
       ]
     },
     {
