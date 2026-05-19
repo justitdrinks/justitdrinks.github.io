@@ -67,7 +67,7 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Smooth strawberry refreshment with naturally vibrant fruity sweetness.",
       fullDescription: "Pure fruity indulgence. We've distilled the essence of sun-ripened strawberries into a smooth, refreshing base. Perfectly balanced for a sweet, energetic pick-me-up any tim[...]",
-      price: 280,
+      price: 0,
       image: "images/product/jaba/distilled-strawberry.png",
       tags: ["Smooth", "Sweet", "Fruity"]
     },
@@ -78,7 +78,7 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Bright tropical pineapple flavor bursting with island-inspired freshness.",
       fullDescription: "Tropical sunshine, distilled. A bright, golden refreshment that brings the island fresh feel to the city streets. Crisp, sweet, and incredibly refreshing.",
-      price: 280,
+      price: 0,
       image: "images/product/jaba/mini-bottle.png",
       tags: ["Bright", "Tropical", "Fresh"]
     },
@@ -89,7 +89,7 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "Crisp apple-inspired refreshment with a clean smooth finish.",
       fullDescription: "Simplicity refined. Our distilled apple juice provides a clean, familiar, and crisp refreshment that serves as the perfect daily companion for natural focus.",
-      price: 280,
+      price: 0,
       image: "images/product/jaba/distilled-apple.png",
       tags: ["Crisp", "Clean", "Classic"]
     },
@@ -100,12 +100,13 @@ export const productData: { [key: string]: Product[] } = {
       category: "Jaba Collection",
       description: "A refreshing combo experience featuring multiple Handas signature flavors.",
       fullDescription: "Can't decide? The mixed pack is your ultimate gateway to the Handas universe. Featuring a curated selection of our best-selling botanical blends, variety is the spice of l[...]",
-      price: 1500,
+      price: 0,
       image: "images/product/jaba/mixed-pack.png",
       tags: ["Variety", "Combo", "Sharing"],
       badge: "Combo Pack"
     }
   ],
+  /*
   moratina: [
     {
       id: 9,
@@ -204,6 +205,8 @@ export const productData: { [key: string]: Product[] } = {
       isComingSoon: true
     }
   ],
+  */
+  /*
   natural: [
     {
       id: 17,
@@ -303,6 +306,7 @@ export const productData: { [key: string]: Product[] } = {
       isComingSoon: true
     }
   ]
+  */
 };
 
 
