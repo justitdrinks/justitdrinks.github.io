@@ -9,7 +9,8 @@ const TESTIMONIALS = [
     role: "Regular Customer",
     content: "The Jaba juice is a lifesaver for late night shifts. Smooth energy without the crash I get from coffee. Just It has nailed the authentic taste!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
+    avatar: "/images/testimonials/user-1.jpg",
+    placeholder: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const TESTIMONIALS = [
     role: "Fitness Enthusiast",
     content: "I love the Natural Juice collection. Baobab Bliss is my post-workout reward. It's refreshing to have real, locally-sourced healthy options.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
+    avatar: "/images/testimonials/user-2.jpg",
+    placeholder: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
   },
   {
     id: 3,
@@ -25,7 +27,8 @@ const TESTIMONIALS = [
     role: "Creative Director",
     content: "The Moratina is sophisticated and perfectly balanced. It's become our go-to drink for creative brainstorming sessions. Pure vibes!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200"
+    avatar: "/images/testimonials/user-3.jpg",
+    placeholder: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200"
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ const TESTIMONIALS = [
     role: "Events Manager",
     content: "We ordered Just It for a corporate event and it was the highlight. The packaging and the taste variety kept everyone talking. Exceptional service!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200"
+    avatar: "/images/testimonials/user-4.jpg",
+    placeholder: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200"
   },
   {
     id: 5,
@@ -41,7 +45,8 @@ const TESTIMONIALS = [
     role: "Software Engineer",
     content: "Ginger Blast Jaba is my secret weapon for debugging. It keeps me sharp and the ginger gives that perfect spicy kick. Highly recommend!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200"
+    avatar: "/images/testimonials/user-5.jpg",
+    placeholder: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200"
   }
 ];
 
@@ -122,7 +127,14 @@ export default function Testimonials() {
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-2xl overflow-hidden bg-gray-100 border-2 border-brand-secondary">
-                  <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
+                  <img 
+                    src={t.avatar} 
+                    alt={t.name} 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = t.placeholder;
+                    }}
+                  />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">{t.name}</h4>

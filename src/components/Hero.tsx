@@ -102,9 +102,12 @@ export default function Hero() {
           <div className="relative z-10 p-4 bg-white rounded-[50px] shadow-2xl shadow-brand-primary/10 border border-gray-50">
             <div className="rounded-[40px] overflow-hidden aspect-[4/5] relative">
               <img 
-                src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200" 
+                src="/images/hero/main.jpg" 
                 alt="Just It Brand Mockup" 
                 loading="eager"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1200";
+                }}
                 className="w-full h-full object-cover transition-transform duration-2000 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-60" />

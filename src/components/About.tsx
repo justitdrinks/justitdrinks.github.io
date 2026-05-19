@@ -13,18 +13,38 @@ export default function About() {
           <div className="relative z-10 grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-12">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1523362628242-4dc5820061fa?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Lifestyle" />
+                <img 
+                  src="/images/about/about-1.jpg" 
+                  className="w-full h-full object-cover" 
+                  alt="Lifestyle" 
+                  onError={(e) => (e.currentTarget.src = "https://images.unsplash.com/photo-1523362628242-4dc5820061fa?q=80&w=600")}
+                />
               </div>
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Fresh ingredients" />
+                <img 
+                  src="/images/about/about-2.jpg" 
+                  className="w-full h-full object-cover" 
+                  alt="Fresh ingredients" 
+                  onError={(e) => (e.currentTarget.src = "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600")}
+                />
               </div>
             </div>
             <div className="space-y-4">
               <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Beverage pour" />
+                <img 
+                  src="/images/about/about-3.jpg" 
+                  className="w-full h-full object-cover" 
+                  alt="Beverage pour" 
+                  onError={(e) => (e.currentTarget.src = "https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=600")}
+                />
               </div>
               <div className="aspect-square rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-                <img src="https://images.unsplash.com/photo-1556761175-5973cf0f32e7?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover" alt="African youth" />
+                <img 
+                  src="/images/about/about-4.jpg" 
+                  className="w-full h-full object-cover" 
+                  alt="African youth" 
+                  onError={(e) => (e.currentTarget.src = "https://images.unsplash.com/photo-1556761175-5973cf0f32e7?q=80&w=600")}
+                />
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Plus, ShoppingBag, X, MessageCircle, ChevronRight, Share2, Star } from "lucide-react";
+import { Heart, Plus, ShoppingBag, X, MessageCircle, ChevronRight } from "lucide-react";
 
 const WHATSAPP_NUMBER = "+254735008421";
 
@@ -153,6 +153,23 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [activeBrand, setActiveBrand] = useState<string>("All Brands");
 
+  // Handle Esc key and Body Scroll Lock
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedProduct(null);
+    };
+
+    if (selectedProduct) {
+      window.addEventListener("keydown", handleEsc);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProduct]);
+
   const brands = ["All Brands", ...new Set(Object.values(productData).flat().map(p => p.brand))];
 
   const filterProducts = (products: Product[]) => {
@@ -282,16 +299,22 @@ export default function Products({ onAddToCart, likedIds, onToggleLike }: Produc
             
             <motion.div 
               layoutId={`product-${selectedProduct.id}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="relative bg-white w-full max-w-[700px] rounded-[32px] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                if (info.offset.y > 150) setSelectedProduct(null);
+              }}
+              className="relative bg-white w-full max-w-[700px] rounded-[32px] overflow-hidden shadow-2xl flex flex-col md:flex-row touch-none"
             >
               <button 
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 z-10 transition-all shadow-sm"
+                className="absolute top-6 right-6 w-10 h-10 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center text-gray-400 hover:text-brand-primary active:scale-90 z-20 transition-all shadow-lg border border-gray-100"
               >
-                <X size={16} />
+                <X size={20} />
               </button>
 
               <div className="w-full md:w-1/2 h-[300px] md:h-auto bg-brand-secondary/30 relative flex items-center justify-center">
