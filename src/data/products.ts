@@ -22,7 +22,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Bold tropical refreshment with a tangy tamarind twist and smooth passion flavor.",
       fullDescription: "Experience the ultimate African fusion. Strong Passion Tamarind combines the sharp, earthy notes of traditional tamarind with the vibrant sweetness of Kenyan passion fruit.[...]",
       price: 0,
-      image: "/images/product/jaba/strong-passion-tamarind.png",
+      image: "images/product/jaba/strong-passion-tamarind.png",
       tags: ["Bold", "Tropical", "Tangy"],
       badge: "Best Seller"
     },
@@ -34,7 +34,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Crisp sparkling ginger flavor crafted for smooth refreshing energy.",
       fullDescription: "A modern take on a classic sharp bite. Our Sparkling Gingerale is double-infused with fresh ginger root and premium botanicals, giving you a clean, bubbly lift without the [...]",
       price: 0,
-      image: "/images/product/jaba/sparkling-gingerale.png",
+      image: "images/product/jaba/sparkling-gingerale.png",
       tags: ["Crisp", "Energizing", "Spicy"]
     },
     {
@@ -45,7 +45,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Fruity sparkling tropical blend inspired by vibrant beach vibes.",
       fullDescription: "Sunset in a bottle. This non-alcoholic sparkling blend captures the essence of coastal vibes with layers of peach, cranberry, and orange, all powered by our signature natur[...]",
       price: 0,
-      image: "/images/product/jaba/sparkling-sob.png",
+      image: "images/product/jaba/sparkling-sob.png",
       tags: ["Fruity", "Vibrant", "Coastal"],
       badge: "Popular"
     },
@@ -57,7 +57,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "A powerful bold refreshment experience for strong flavor lovers.",
       fullDescription: "Our flagship concentrate. Handas Extra Strong is for the dedicated, the creators, and the night-shifters. It delivers a deep, uncompromised botanical experience that keeps [...]",
       price: 0,
-      image: "/images/product/jaba/extra-strong.png",
+      image: "images/product/jaba/extra-strong.png",
       tags: ["Powerful", "Bold", "Focus"]
     },
     {
@@ -68,7 +68,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Smooth strawberry refreshment with naturally vibrant fruity sweetness.",
       fullDescription: "Pure fruity indulgence. We've distilled the essence of sun-ripened strawberries into a smooth, refreshing base. Perfectly balanced for a sweet, energetic pick-me-up any tim[...]",
       price: 280,
-      image: "/images/product/jaba/distilled-strawberry.png",
+      image: "images/product/jaba/distilled-strawberry.png",
       tags: ["Smooth", "Sweet", "Fruity"]
     },
     {
@@ -79,7 +79,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Bright tropical pineapple flavor bursting with island-inspired freshness.",
       fullDescription: "Tropical sunshine, distilled. A bright, golden refreshment that brings the island fresh feel to the city streets. Crisp, sweet, and incredibly refreshing.",
       price: 280,
-      image: "/images/product/jaba/mini-bottle.png",
+      image: "images/product/jaba/mini-bottle.png",
       tags: ["Bright", "Tropical", "Fresh"]
     },
     {
@@ -90,7 +90,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Crisp apple-inspired refreshment with a clean smooth finish.",
       fullDescription: "Simplicity refined. Our distilled apple juice provides a clean, familiar, and crisp refreshment that serves as the perfect daily companion for natural focus.",
       price: 280,
-      image: "/images/product/jaba/distilled-apple.png",
+      image: "images/product/jaba/distilled-apple.png",
       tags: ["Crisp", "Clean", "Classic"]
     },
     {
@@ -101,7 +101,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "A refreshing combo experience featuring multiple Handas signature flavors.",
       fullDescription: "Can't decide? The mixed pack is your ultimate gateway to the Handas universe. Featuring a curated selection of our best-selling botanical blends, variety is the spice of l[...]",
       price: 1500,
-      image: "/images/product/jaba/mixed-pack.png",
+      image: "images/product/jaba/mixed-pack.png",
       tags: ["Variety", "Combo", "Sharing"],
       badge: "Combo Pack"
     }
