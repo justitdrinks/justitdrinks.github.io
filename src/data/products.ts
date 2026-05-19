@@ -26,7 +26,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "A refreshing combo experience featuring multiple Handas signature flavors.",
       fullDescription: "Can't decide? The mixed pack is your ultimate gateway to the Handas universe. Featuring a curated selection of our best-selling botanical blends, variety is the spice of life.",
       price: 4500,
-      image: "/images/product/jaba/mixed-pack.jpg",
+      image: "/images/product/jaba/mixed-pack.png",
       tags: ["Variety", "Combo", "Sharing"],
       badge: "Combo Pack"
     },
@@ -38,7 +38,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Bold tropical refreshment with a tangy tamarind twist and smooth passion flavor.",
       fullDescription: "Experience the ultimate African fusion. Strong Passion Tamarind combines the sharp, earthy notes of traditional tamarind with the vibrant sweetness of Kenyan passion fruit. A bold, functional refreshment built for the social and the sharp.",
       price: 1000,
-      image: "/images/product/jaba/strong-passion-tamarind.jpg",
+      image: "/images/product/jaba/strong-passion-tamarind.png",
       tags: ["Bold", "Tropical", "Tangy"],
       badge: "Best Seller",
       variants: [
@@ -54,7 +54,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Crisp sparkling ginger flavor crafted for smooth refreshing energy.",
       fullDescription: "A modern take on a classic sharp bite. Our Sparkling Gingerale is double-infused with fresh ginger root and premium botanicals, giving you a clean, bubbly lift without the sugar crash of synthetic energy drinks.",
       price: 1000,
-      image: "/images/product/jaba/sparkling-gingerale.jpg",
+      image: "/images/product/jaba/sparkling-gingerale.png",
       tags: ["Crisp", "Energizing", "Spicy"],
       variants: [
         { size: "1000ml", price: 1000 },
@@ -69,7 +69,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Fruity sparkling tropical blend inspired by vibrant beach vibes.",
       fullDescription: "Sunset in a bottle. This non-alcoholic sparkling blend captures the essence of coastal vibes with layers of peach, cranberry, and orange, all powered by our signature natural stimulants.",
       price: 1000,
-      image: "/images/product/jaba/sparkling-sob.jpg",
+      image: "/images/product/jaba/sparkling-sob.png",
       tags: ["Fruity", "Vibrant", "Coastal"],
       badge: "Popular",
       variants: [
@@ -85,7 +85,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "A powerful bold refreshment experience for strong flavor lovers.",
       fullDescription: "Our flagship concentrate. Handas Extra Strong is for the dedicated, the creators, and the night-shifters. It delivers a deep, uncompromised botanical experience that keeps your focus sharp and your mood elevated.",
       price: 1000,
-      image: "/images/product/jaba/extra-strong.jpg",
+      image: "/images/product/jaba/extra-strong.png",
       tags: ["Powerful", "Bold", "Focus"],
       variants: [
         { size: "1litre", price: 1000 },
@@ -101,7 +101,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Smooth strawberry refreshment with naturally vibrant fruity sweetness.",
       fullDescription: "Pure fruity indulgence. We've distilled the essence of sun-ripened strawberries into a smooth, refreshing base. Perfectly balanced for a sweet, energetic pick-me-up any time of day.",
       price: 1000,
-      image: "/images/product/jaba/distilled-strawberry.jpg",
+      image: "/images/product/jaba/distilled-strawberry.png",
       tags: ["Smooth", "Sweet", "Fruity"],
       variants: [
         { size: "1 litre", price: 1000 },
@@ -117,7 +117,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Crisp apple-inspired refreshment with a clean smooth finish.",
       fullDescription: "Simplicity refined. Our distilled apple juice provides a clean, familiar, and crisp refreshment that serves as the perfect daily companion for natural focus.",
       price: 1000,
-      image: "/images/product/jaba/distilled-apple.jpg",
+      image: "/images/product/jaba/distilled-apple.png",
       tags: ["Crisp", "Clean", "Classic"],
       variants: [
         { size: "1 litre", price: 1000 },
@@ -133,7 +133,7 @@ export const productData: { [key: string]: Product[] } = {
       description: "Compact refreshment for the go.",
       fullDescription: "The perfect shot of energy. Compact, powerful, and ready for any challenge the day throws at you.",
       price: 300,
-      image: "/images/product/jaba/mini-bottle.jpg",
+      image: "/images/product/jaba/mini-bottle.png",
       tags: ["Compact", "Travel", "Natural"],
       badge: "Quick Shot"
     }
